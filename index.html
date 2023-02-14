@@ -1,11 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Our Funky HTML Page</title>
-<meta name="description" content="Our first page">
-<meta name="keywords" content="html tutorial template">
+    <meta charset="UTF-8">
+    <title>Unit Converter</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        .section {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-Content goes here.
+    <div class="container">
+        <h1 class="text-center">Unit Converter</h1>
+        <div class="row section">
+            <div class="col-md-4 offset-md-2">
+                <h3 class="text-center">Length Conversion</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="from">From:</label>
+                        <input type="number" class="form-control" id="from" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="fromUnit">From Unit:</label>
+                        <select class="form-control" id="fromUnit">
+                            <option value="meters">Meters</option>
+                            <option value="centimeters">Centimeters</option>
+                            <option value="kilometers">Kilometers</option>
+                            <option value="feet">Feet</option>
+                            <option value="inches">Inches</option>
+                            <option value="yards">Yards</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toUnit">To Unit:</label>
+                        <select class="form-control" id="toUnit">
+                            <option value="meters">Meters</option>
+                            <option value="centimeters">Centimeters</option>
+                            <option value="kilometers">Kilometers</option>
+                            <option value="feet">Feet</option>
+                            <option value="inches">Inches</option>
+                            <option value="yards">Yards</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To:</label>
+                        <input type="number" class="form-control" id="toLength" step="any" readonly>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="convertLength()">Convert</button>
+                </form>
+                <p id="convertedValue"></p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-center">Temperature Conversion</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="fromTemp">From:</label>
+                        <input type="number" class="form-control" id="fromTemp" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="fromUnitTemp">From Unit:</label>
+                        <select class="form-control" id="fromUnitTemp">
+                            <option value="celsius">Celsius</option>
+                            <option value="fahrenheit">Fahrenheit</option>
+                            <option value="kelvin">Kelvin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toUnitTemp">To Unit:</label>
+                        <select class="form-control" id="toUnitTemp">
+                            <option value="celsius">Celsius</option>
+                            <option value="fahrenheit">Fahrenheit</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="toTemp">To:</label>
+                        <input type="number" class="form-control" id="toTemp" step="any" readonly>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="convertTemperature()">Convert</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script src="script.js"></script>
 </body>
 </html>

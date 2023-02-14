@@ -1,0 +1,11 @@
+body {
+    padding-top: 50px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+#convertedValue {
+    font-size: 2em;
+}
