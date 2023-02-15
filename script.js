@@ -99,7 +99,7 @@ function convertCurrency() {
 
   // Get the exchange rate
   const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
-  // console.log(url);
+  console.log(url);
   fetch(url)
     .then(response => response.json())
     .then(data => {
