@@ -50,8 +50,8 @@ function convertLength() {
       break;
   }
 
-  // Display the result
-  document.getElementById("toLength").value = result.toFixed(2);
+  // Display the result with a precision of 5 decimal places
+  document.getElementById("toLength").value = result.toFixed(5);
 }
 
 function convertTemperature() {
@@ -88,5 +88,26 @@ function convertTemperature() {
       break;
   }
   // Display the result
-  document.getElementById("toTemp").value = result.toFixed(2);
+  document.getElementById("toTemp").value = result.toFixed(5);
+}
+
+function convertCurrency() {
+  // Get the input values
+  const amount = document.getElementById("fromCurr").value;
+  const fromCurrency = document.getElementById("fromUnitCurr").value;
+  const toCurrency = document.getElementById("toUnitCurr").value;
+
+  // Get the exchange rate
+  const url = `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`;
+  // console.log(url);
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const rate = data.rates[toCurrency];
+      const result = amount * rate;
+      // console.log(result);
+      // Display result
+      document.getElementById("toCurr").value = result.toFixed(2);
+    })
+    .catch(error => console.log(error));
 }

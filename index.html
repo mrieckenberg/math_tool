@@ -18,7 +18,8 @@
     <div class="container">
         <h1 class="text-center">Unit Converter</h1>
         <div class="row section">
-            <div class="col-md-4 offset-md-2">
+            <!-- Max of 12 columns, so 4*3=12 -->
+            <div class="col-md-4">
                 <h3 class="text-center">Length Conversion</h3>
                 <form>
                     <div class="form-group">
@@ -84,8 +85,51 @@
                     <button type="button" class="btn btn-primary" onclick="convertTemperature()">Convert</button>
                 </form>
             </div>
+
+
+            <div class="col-md-4">
+                <h3 class="text-center">Currency Conversion</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="fromCurr">From:</label>
+                        <input type="number" class="form-control" id="fromCurr" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="fromUnitCurr">From Unit:</label>
+                        <select class="form-control" id="fromUnitCurr">
+                            <!-- First option is the default option, change later -->
+                            <!-- <option value="celsius">Canadian Dollar (CAD)</option> -->
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toUnitCurr">To Unit:</label>
+                        <select class="form-control" id="toUnitCurr">
+                            <!-- <option value="celsius">Canadian Dollar (CAD)</option> -->
+                            <option value="USD">US Dollar (USD)</option>
+                            <option value="EUR">Euro (EUR)</option>
+                            <option value="GBP">British Pound (GBP)</option>
+                            <option value="JPY">Japanese Yen (JPY)</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="toCurr">To:</label>
+                        <input type="number" class="form-control" id="toCurr" step="any" readonly>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="convertCurrency()">Convert</button>
+                </form>
+            </div>
+
         </div>
     </div>
-        <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Link to custom JavaScript -->
+    <script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>
